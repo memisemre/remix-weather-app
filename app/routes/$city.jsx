@@ -21,11 +21,9 @@ export const loader = async({params})=>{
     generalCityInfos:{
         name: data.city.name,
         country: data.city.country,
-        population: data.city.population,
         temp: TEMP.toFixed(0),
         minTemp: MIN_TEMP.toFixed(0),
         maxTemp: MAX_TEMP.toFixed(0),
-        humidity: data.list[0].main.humidity,
         weatherIcon: data.list[0].weather[0].icon,
         weatherDesc: data.list[0].weather[0].description
     },

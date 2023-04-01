@@ -16,5 +16,4 @@ const NowWeather = (props)=>{
        </div>
     )
 }
-
 export default NowWeather;
