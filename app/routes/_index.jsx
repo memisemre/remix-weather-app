@@ -2,7 +2,24 @@ export const meta = () => {
   return [{ title: "New Remix App" }];
 };
 
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { Outlet } from "@remix-run/react";
+const city = "ankara"
+export const loader = async () => {
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=`;
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=`);
+  const data = await response.json();
+  console.log(data)
+
+  return json({
+    data: data
+  });
+};
+
 export default function Index() {
+  
+  console.log("osman")
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
@@ -31,6 +48,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      
     </div>
   );
 }
