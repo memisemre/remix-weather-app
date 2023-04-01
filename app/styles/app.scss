@@ -11,7 +11,9 @@ a{
     text-decoration: none;
 }
 body{
-    background-color: #D4E6F1;
+    width: 100%;
+    height: 100vh;
+    background-color:  #1B2631;
 }
 #welcome-page{
     width: 100%;
@@ -52,4 +54,60 @@ body{
         }
     }
 }
+header{
+    padding: 32px 64px;
+    border-bottom: 1px solid #2980B9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    a{
+        font-size: 32px;
+        color: #2980B9;
+    }
+}
 
+
+#pageContainer{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    #NowWeather{
+        width: calc(100% - 420px);
+        border-right: 1px solid red;
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        padding: 64px;
+        .temp{
+            h1{
+                color: #FFF;
+                font-size: 64px;
+                font-weight: bold;
+            }
+        }
+        .city-name-infos{
+            margin-left: 5%;
+            .cityName{
+                color: #FFF;
+                font-size: 32px;
+                font-weight: bold;
+            }
+            .country{
+                color: #FDFEFE;
+            }
+        }
+        .temp-details{
+            margin-left: 5%;
+            display: flex;
+            align-items: center;
+            img{
+                width: 64px;
+            }
+            p{
+                color: #FFF;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

@@ -9,6 +9,7 @@ import {
 
 
 import Css from "./styles/app.css";
+import Header from "./Components/Header";
 export const links = ()=>{
   return[
     {rel: "stylesheet", href:Css}
@@ -25,6 +26,7 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <Header />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
