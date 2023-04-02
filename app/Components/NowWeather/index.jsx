@@ -7,7 +7,7 @@ const NowWeather = (props)=>{
            </div>
            <div className="city-name-infos">
                 <p className="cityName">{I.name}</p>
-                <p className="country">{I.country === "TR" && "Türkiye"}</p>
+                <p className="country">{I.country === "TR" ? "Türkiye" : I.country}</p>
            </div>
            <div className="temp-details">
                 <img src={`https://openweathermap.org/img/wn/${I.weatherIcon}@2x.png`} alt="" />
