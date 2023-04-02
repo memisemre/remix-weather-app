@@ -5,8 +5,14 @@ import { appId } from "../apiInfos/apiInfos"
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 export const loader = async({params})=>{
-    const [lat,long] = params.city.split("-");
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${params.city}&appid=${appId}`);
+    let response;
+    const [lat,long] = params.city.split(",");
+    if(long){
+        response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long.replace(" ","")}&appid=${appId}`);
+    }
+    else{
+        response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${params.city}&appid=${appId}`);
+    }
     const data = await response.json();
     data.city.name = data.city.name.replace(" Province","");
     if(params.city === "404") throw redirect("/404");
