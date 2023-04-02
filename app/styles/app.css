@@ -90,5 +90,56 @@ header {
       #pageContainer #NowWeather .temp-details p {
         color: #FFF;
         text-transform: capitalize; }
+  #pageContainer #DetailWeather {
+    width: 420px;
+    padding: 32px;
+    max-height: 100vh;
+    overflow: auto; }
+    #pageContainer #DetailWeather .general-city-infos {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 32px;
+      border-bottom: 1px solid gray; }
+      #pageContainer #DetailWeather .general-city-infos div {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 24px;
+        padding: 12px; }
+        #pageContainer #DetailWeather .general-city-infos div:last-child {
+          margin: 0; }
+        #pageContainer #DetailWeather .general-city-infos div i {
+          font-size: 24px;
+          color: #85929E; }
+        #pageContainer #DetailWeather .general-city-infos div p {
+          margin-top: 8px; }
+          #pageContainer #DetailWeather .general-city-infos div p.data {
+            font-size: 20px; }
+    #pageContainer #DetailWeather .temps-area {
+      display: grid;
+      grid-template-columns: 50% 50%; }
+      #pageContainer #DetailWeather .temps-area .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 12px;
+        margin-right: 24px;
+        border-bottom: 1px solid white; }
+        #pageContainer #DetailWeather .temps-area .item:nth-child(even) {
+          margin: 0; }
+        #pageContainer #DetailWeather .temps-area .item p {
+          color: white !important;
+          margin-top: 8px; }
+          #pageContainer #DetailWeather .temps-area .item p.temp {
+            font-size: 24px; }
+          #pageContainer #DetailWeather .temps-area .item p.date {
+            font-size: 12px; }
+          #pageContainer #DetailWeather .temps-area .item p.clock {
+            margin: 0;
+            font-size: 12px; }
+        #pageContainer #DetailWeather .temps-area .item .date {
+          color: white; }
 
 /*# sourceMappingURL=app.css.map */

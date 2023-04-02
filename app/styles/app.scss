@@ -110,4 +110,72 @@ header{
             }
         }
     }
+    #DetailWeather{
+        width: 420px;
+        padding: 32px;
+        max-height: 100vh;
+        overflow: auto;
+        .general-city-infos{
+            display: flex;
+            justify-content: center;
+            padding-bottom: 32px;
+            border-bottom: 1px solid gray;
+            div{
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-right: 24px;
+                padding: 12px;
+                &:last-child{
+                    margin: 0;
+                }
+                i{
+                    font-size: 24px;
+                    color: #85929E;
+                }
+                p{
+                    margin-top: 8px;
+                    &.data{
+                        font-size: 20px;
+                    }
+                }
+
+            }
+        }
+        .temps-area{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            .item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-bottom: 12px;
+                margin-right: 24px;
+                &:nth-child(even){
+                    margin: 0;
+                }
+                border-bottom: 1px solid white;
+                p{
+                    color: white !important;
+                    margin-top: 8px;
+                    &.temp{
+                        font-size: 24px;
+                    }
+                    &.date{
+                        font-size: 12px;
+                    }
+                    &.clock{
+                        margin: 0;
+                        font-size: 12px;
+                    }
+                }
+                
+                .date{
+                    color: white;
+                }
+            }
+        }
+    }
 }

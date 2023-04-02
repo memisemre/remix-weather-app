@@ -44,7 +44,7 @@ export default function Index(){
     return(
         <div id="pageContainer">
             <NowWeather info = {generalCityInfos}/>
-            <DetailWeather info ={detailInfo}/>
+            <DetailWeather info = {detailInfo}/>
         </div>
     )
 }
