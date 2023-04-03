@@ -2,7 +2,6 @@ import { FaLocationArrow,FaMale } from "react-icons/fa";
 const DetailWeather = (props)=>{
     const I = props.info;
     const I_LIST = props.info.list;
-    console.log(I)
     return(
         <div id="DetailWeather">
             <div className="general-city-infos">

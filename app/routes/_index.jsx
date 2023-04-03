@@ -1,7 +1,26 @@
 import { useEffect, useState } from "react";
+import PopularCities from "../Components/PopularCities";
 export const meta = () => {
   return [{ title: "Remix - Weather App" }];
 };
+import { json } from "@remix-run/node";
+import { appId } from "../apiInfos/apiInfos";
+
+export const loader = async()=>{
+  const ANKARA_RES = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=ankara&appid=${appId}`)
+  const ANKARA_DATA = await ANKARA_RES.json();
+
+  const ISTANBUL_RES = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=${appId}`)
+  const ISTANBUL_DATA = await ISTANBUL_RES.json();
+  
+  const LONDON_RES = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=london&appid=${appId}`)
+  const LONDON_DATA = await LONDON_RES.json();
+  return json({
+      ankara: ANKARA_DATA,
+      istanbul: ISTANBUL_DATA,
+      london: LONDON_DATA
+  })
+}
 
 export default function Index() {
   const [location, setLocation] = useState(null);
@@ -12,10 +31,11 @@ export default function Index() {
         lat: position.coords.latitude,
         long: position.coords.longitude
       }),
-      error => console.error(error)
+      error => {
+        return;
+      }
     );
   }, []);
-  console.log(location)
   const [searchBarContent,setSearchBarContent] = useState("");
   const handleInputChange = (e)=>{
     setSearchBarContent(e.target.value);
@@ -42,6 +62,7 @@ export default function Index() {
           />
           <button onClick={handleSearchBtnClick}>Search</button>
         </div>
+        <PopularCities/>
       </div>
     );
   }
